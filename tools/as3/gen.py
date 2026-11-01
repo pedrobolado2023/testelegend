@@ -63,6 +63,31 @@ PATCHES: dict[str, list[tuple[str, str]]] = {
                __m.text = __m.text.substring(0,__m.getCharIndexAtPoint(__m.width - 22,5)) + "...";
             }
          }""")],
+    "map.internals.findPath.AcorrsLineGrid": [(
+        """               while(true)
+               {
+                  if(_loc7_ != param2.y)
+                  {
+                     _loc6_ = (_loc7_ - param1.y) / _loc9_ + param1.x;
+                     if(!this.isWalkable(_loc6_,_loc7_))
+                     {
+                        break;
+                     }
+                     _loc7_ += _loc8_;
+                     continue;
+                  }
+               }
+               return null;""",
+        """               while(_loc7_ != param2.y)
+               {
+                  _loc6_ = (_loc7_ - param1.y) / _loc9_ + param1.x;
+                  if(!this.isWalkable(_loc6_,_loc7_))
+                  {
+                     return null;
+                  }
+                  _loc7_ += _loc8_;
+               }
+               return _loc3_;""")],
 }
 
 

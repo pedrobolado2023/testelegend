@@ -489712,20 +489712,16 @@ defs["map.internals.findPath.AcorrsLineGrid"] = function define($) {
             {
                _loc8_ = param2.y > param1.y ? 1 : -1;
                _loc7_ = param1.y;
-               while(true)
+               while(_loc7_ != param2.y)
                {
-                  if(_loc7_ != param2.y)
+                  _loc6_ = (_loc7_ - param1.y) / _loc9_ + param1.x;
+                  if(!this.isWalkable(_loc6_,_loc7_))
                   {
-                     _loc6_ = (_loc7_ - param1.y) / _loc9_ + param1.x;
-                     if(!this.isWalkable(_loc6_,_loc7_))
-                     {
-                        break;
-                     }
-                     _loc7_ += _loc8_;
-                     continue;
+                     return null;
                   }
+                  _loc7_ += _loc8_;
                }
-               return null;
+               return _loc3_;
             }
             _loc8_ = param2.x > param1.x ? 1 : -1;
             _loc6_ = param1.x;

@@ -1,12 +1,13 @@
 import { createRequire } from 'node:module';
 import { createHash } from 'node:crypto';
 import { readdirSync, readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 
 const require = createRequire(new URL('../../web/package.json', import.meta.url));
 const { transformSync } = require('esbuild');
 
-const src = new URL('../../web/src/gen-bundles/', import.meta.url).pathname;
-const out = new URL('../../web/public/as3/bundles/', import.meta.url).pathname;
+const src = fileURLToPath(new URL('../../web/src/gen-bundles/', import.meta.url));
+const out = fileURLToPath(new URL('../../web/public/as3/bundles/', import.meta.url));
 rmSync(out, { recursive: true, force: true });
 mkdirSync(out, { recursive: true });
 
