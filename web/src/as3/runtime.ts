@@ -1,4 +1,5 @@
 import { Domain } from '@/flash/library';
+import { mirrorMapAvatar } from './showAvatarMirror';
 
 type Ctor = (new (...a: any[]) => any) & { $fields?: (self: any) => void; __fqn?: string; __interfaces?: string[] };
 
@@ -123,6 +124,7 @@ export const $ = {
       return s;
     }
     const cls = mod.default($);
+    if (fqn === 'avatar.view.ShowAvatar') mirrorMapAvatar(cls, $);
     defined.set(fqn, cls);
     const init = staticInits.get(cls);
     if (init) { staticInits.delete(cls); init(); }
