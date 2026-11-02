@@ -30,7 +30,7 @@
     }
    ],
    "set": {
-    "mount": 1003
+    "mount": 0
    }
   },
   {
@@ -106,7 +106,10 @@
     {
      "code": 4233,
      "msg": "VersionMsg",
-     "data": {}
+     "data": {
+      "open_version": false,
+      "open_story": false
+     }
     },
     {
      "code": 4160,
@@ -1154,7 +1157,7 @@
     "param1": 1
    },
    "set": {
-    "mount": 1003
+    "mount": 0
    },
    "send": [
     {
